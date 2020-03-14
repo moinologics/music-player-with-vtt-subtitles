@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>music player</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://cdn.loc/libs/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<script src="http://cdn.loc/libs/js/jquery.min.js"></script>
+	<script src="http://cdn.loc/libs/js/popper.min.js"></script>
+	<script src="http://cdn.loc/libs/js/bootstrap.min.js"></script>
+		
+</head>
+<body>
+
+	<div class="container-fluid">
+		<br><br>
+
+		<div class="col-lg-8 col-md-8 mx-auto border" id="player"> 
+
+			<div class="row mx-auto embed-responsive embed-responsive-21by9">
+				<div class="embed-responsive-item" id="lyrics">
+					<div class="row h-100">
+					    <div class="m-auto text-center fo-res-md" id="lyrics">
+					        <h4 id="curline"> ♪ </h4>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<audio id="audio" class="d-none">
+				<source src="" type="" id="audiosrc1">
+				<track src="" kind="subtitles" srclang="" label="" id="captsrc1" default>
+			</audio>
+
+			<div class="row border" id="controls">
+				<div class="col-12 py-2 border-bottom">
+					<div class="row">
+						<div class="col-2 px-0 text-center" id="curtime">
+							00:00:00
+						</div>
+						<div class="col-8 my-auto px-0">
+							<div class="progress pointer" style="height:8px" id="prgcont">
+							  <div class="progress-bar" id="prgbar"></div>
+							  <!-- <div class="progress-bar bg-info" id="buff"></div> -->
+							</div>
+						</div>
+						<div class="col-2 px-0 text-center" id="tottime">
+							00:00:00
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-10 col-md-10 col-sm-8 col-8 mx-auto pd-2">
+					<div class="row h-100 p-1">
+						<div class="m-auto">
+							<div class="input-group">
+							  <div class="input-group-prepend">
+							    <button class="btn btn-outline-info btn-sm px-3 rounded-left">
+							    	<i class="fas fa-fast-backward"></i>
+							    </button>
+							    <button class="btn btn-outline-info btn-sm px-3" onclick="controls('bwd')">
+							    	<i class="fas fa-backward"></i>
+							    </button>
+							    <button class="btn btn-outline-info btn-sm px-3" id="ppbtn" onclick="controls('play-pause')">
+							    	<i class="fas fa-play"></i>
+							    </button>
+							    <button class="btn btn-outline-info btn-sm px-3" onclick="controls('fwd')">
+							    	<i class="fas fa-forward"></i>
+							    </button>
+							    <button class="btn btn-outline-info btn-sm px-3 rounded-right">
+							    	<i class="fas fo-res-sm fa-fast-forward"></i> 
+							    </button>
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-4 col-4 mx-auto">
+					<div class="row h-100">
+						<div class="col-3 text-center my-auto px-0">
+							<i class="fas fa-volume-up"></i>
+						</div>
+						<div class="col-9 px-1 py-0">
+							<input type="range" class="custom-range my-2" id="vol" onchange="changevolume(this.value/100)">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<br>
+		
+		<br><br><br>
+	</div>
+
+</body>
+
+<script src="script.js"></script>
+<script>
+
+	var song = {
+                source: {src: 'music/sample1.mp3', type: 'audio/mpeg'},
+                track: {src: 'subtitles/sample1.vtt', srclang:'en', label:'English'}
+            }; 
+
+  	changeaudio(song);
+
+</script>
+</html>

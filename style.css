@@ -1,0 +1,24 @@
+html { font-size: 0.8rem; }
+
+@media (min-width: 576px) {
+    html { font-size: 1.1rem; }
+}
+@media (min-width: 768px) {
+    html { font-size: 1.2rem; }
+}
+@media (min-width: 992px) {
+    html { font-size: 1.4rem; }
+}
+@media (min-width: 1200px) {
+    html { font-size: 1.5rem; }
+}
+
+.fac{
+	color: #8c8c8c;
+}
+.pointer{
+	cursor: pointer;
+}
+.pointer:active{
+	background-color: blue;
+}
